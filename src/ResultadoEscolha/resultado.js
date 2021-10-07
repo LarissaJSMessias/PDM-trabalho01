@@ -1,12 +1,15 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import styles from './style';
 
 export default function ResultadoConsumo(props) {
   return (
-    <View>
-        <Text/>
-        <Text>{props.mensagem}</Text>
-        <Text>{props.resultado}</Text>
+    <View style={styles.resultado}>
+        
+        <Text style={styles.textresultado}>
+        {props.mensagem}</Text>
+        <Text style={styles.textMensagem}>
+        {props.resultado}</Text>
         
      
      </View>

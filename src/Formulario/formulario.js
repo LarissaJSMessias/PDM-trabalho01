@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Text, View, TextInput, Button } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity } from 'react-native';
 import ResultadoConsumo from '../ResultadoEscolha/resultado';
+import styles from './style';
 
 export default function Formulario() {
   
@@ -45,40 +46,49 @@ export default function Formulario() {
 
 
     return (
-    <View>
-      <View>
-        <Text>Valor da gasolina:</Text>
+    <View style={styles.formContext}>
+      <View style={styles.form}>
+        <Text style={styles.formLabel}>Valor da gasolina:</Text>
         <TextInput 
+          tyle={styles.input}
           onChangeText={setValorgas}
           value={valorgas}
         placeholder="Ex: 5.18"
         keyboardType="numeric"
         />
-        <Text>Consumo da gasolina:</Text>
+        <Text tyle={styles.formLabel}>Consumo da gasolina:</Text>
         <TextInput 
+        tyle={styles.input}
          onChangeText={setConsumogas}
          value={consumogas}
         placeholder="Ex: 8.25"
         keyboardType="numeric"
         />
-        <Text>Valor do álcool:</Text>
+        <Text tyle={styles.formLabel}>Valor do álcool:</Text>
         <TextInput 
+        tyle={styles.input}
           onChangeText={setValoralc}
           value={valoralc}
         placeholder="Ex: 4.50"
         keyboardType="numeric"
         />
-        <Text>Consumo de álcool:</Text>
+        <Text tyle={styles.formLabel}>Consumo de álcool:</Text>
         <TextInput 
+        tyle={styles.input}
          onChangeText={setConsumoalc}
          value={consumoalc}
         placeholder="Ex: 6.20"
         keyboardType="numeric"
         />
-        <Button 
+        <TouchableOpacity 
+        style={styles.buttonCalculator}
         title={textoBotao}
         onPress={validaConsumo}
-        />
+      >
+        <Text style={styles.buttonCalculator}> {textoBotao}</Text>
+      </TouchableOpacity>
+       
+      
       </View>
     <ResultadoConsumo
         mensagem={msg} 
